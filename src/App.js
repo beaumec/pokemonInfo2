@@ -49,6 +49,11 @@ console.log(pokemon)
       <Button variant="outline-success"
         style={{ backgroundColor: "orange"}}
         onClick={() => {
+          if( !query) {
+            alert("Write a pokemon name") 
+            return null
+            
+          }
           const result = pokemons.find((p) => p.name.toLowerCase() === query);
           fetchPokemonData(result.url);
           // console.log(result)
